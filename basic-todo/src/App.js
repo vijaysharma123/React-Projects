@@ -39,7 +39,7 @@ function App() {
     <>
       {/* search container */}
       <div className="md:w-1/2 mx-auto mt-20 text-center">
-        <h1 className="font-medium text-3xl">React Todos</h1>
+        <h1 className="font-medium text-3xl">Basic React Todo App</h1>
         <Inputbar addTodo={addTodo}/>
 
         <Todolist todos={todos} deleteTodo={deleteTodo}/>
