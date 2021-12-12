@@ -15,7 +15,6 @@ function App() {
   const [todos, setTodos] = useState(todosArr);
 
   const addTodo = (todo) => {
-    // console.log(todo);
     let id;
     todos.length===0? id=0 : id=todos[todos.length-1].id + 1;
     const newTodo = {
@@ -37,7 +36,6 @@ function App() {
 
   return (
     <>
-      {/* search container */}
       <div className="md:w-1/2 mx-auto mt-20 text-center">
         <h1 className="font-medium text-3xl">Basic React Todo App</h1>
         <Inputbar addTodo={addTodo}/>
