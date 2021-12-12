@@ -6,6 +6,8 @@ import Header from './components/Header';
 import AddContact from './components/AddContact';
 import ContactList from './components/ContactList';
 import { useSnackbar } from 'notistack';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
   const [contactsArr, setContactsArr] = useState(contactList);  
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   const addContact = (name, email) => {
     const newContact = {id : uuid(), name, email};
@@ -56,16 +59,29 @@ function App() {
     }
   }
 
+  
+const theme = createTheme({
+  palette: {
+    mode: darkMode ? "dark" : "light"
+  }
+})
+
+const toggleTheme = () => {
+  darkMode ? setDarkMode(false) : setDarkMode(true);
+}
+
   return (
     <>
+    <ThemeProvider theme={theme}>
     <Router>
-       <Header/>
+       <Header toggleTheme={toggleTheme} />
        
       <Routes>
         <Route path="/" exact element={<ContactList contactsArr={searchTerm.length > 0 ? searchResults : contactsArr} deleteContact={deleteContact} searchTerm={searchTerm} searchKeyword={searchKeyword} />}></Route>
         <Route path="/add" exact element={<AddContact addContact={addContact}/>}></Route>
       </Routes>
     </Router>
+    </ThemeProvider>
     </>
   );
 }
