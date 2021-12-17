@@ -3,18 +3,14 @@ import {
     Button,
     Image,
     Heading,
-    Stack,
     HStack,
-    Flex,
     Box,
     Container,
     Grid,
     useColorMode
 } from '@chakra-ui/react';
-import { useColorModeValue } from '@chakra-ui/react';
 
 const Projects = () => {
-
 
     const { colorMode } = useColorMode();
     const isDark = colorMode === 'dark';
@@ -92,13 +88,16 @@ const Projects = () => {
 
                                 <Button
                                     w={'full'}
-                                    colorScheme={'red'}
+                                    colorScheme={'blue'}
+                                    bg={isDark ? 'blue.300' : 'blue.500'}
+                                    _hover={{ bg: isDark ? 'blue.400' : 'blue.600' }}
                                 >
                                     Preview
                                 </Button>
                                 <Button
                                     w={'full'}
                                     colorScheme={'blue'}
+                                    variant={'outline'}
                                 >
                                     Code
                                 </Button>

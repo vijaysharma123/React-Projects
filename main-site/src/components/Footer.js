@@ -1,16 +1,10 @@
 import {
     Text,
-    Button,
-    Image,
-    Heading,
     Stack,
     HStack,
-    Flex,
     Box,
     Container,
-    Grid,
     IconButton,
-    useColorMode
 } from '@chakra-ui/react';
 import { useColorModeValue } from '@chakra-ui/react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
@@ -33,7 +27,7 @@ const Footer = () => {
 
                     <HStack>
                         <Text>© 2021 React Projects. Designed By</Text>
-                        <Text as={'a'} href='' color={'blue.600'} fontWeight={500}>Jigar Sable</Text>
+                        <Text as={'a'} href='' color={'blue.500'} fontWeight={500}>Jigar Sable</Text>
                     </HStack>
 
 
@@ -43,10 +37,10 @@ const Footer = () => {
                             <FaGithub />
                         </IconButton>
                         <IconButton isRound='true' as={'a'} href={''}>
-                            <FaGithub />
+                            <FaLinkedin />
                         </IconButton>
                         <IconButton isRound='true' as={'a'} href={''}>
-                            <FaGithub />
+                            <FaInstagram />
                         </IconButton>
 
                     </Stack>

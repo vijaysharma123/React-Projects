@@ -1,5 +1,3 @@
-import { useColorMode } from '@chakra-ui/color-mode';
-import { useMediaQuery } from '@chakra-ui/media-query';
 import { 
     Text,
     Button,
@@ -10,19 +8,11 @@ import {
     Box,
     Container
 } from '@chakra-ui/react';
-
 import Hero from '../react.png';
 
 function Header() {
 
-    const { colorMode } = useColorMode();
-    const isDark = colorMode === "dark";
-
-    const { isNotSmallScreen } = useMediaQuery("(min-width:600px)");
-
     return (
-        <>
-
             <Container maxW='6xl'>
 
                 <Stack
@@ -92,9 +82,6 @@ function Header() {
                 </Stack>
 
             </Container>
-
-
-        </>
     )
 }
 
