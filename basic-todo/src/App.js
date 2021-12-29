@@ -6,17 +6,17 @@ import Todolist from './Components/Todolist';
 function App() {
 
   let todosArr;
-  if(localStorage.getItem("todos")===null){
+  if (localStorage.getItem("todos") === null) {
     todosArr = [];
   } else {
     todosArr = JSON.parse(localStorage.getItem("todos"));
   }
-  
+
   const [todos, setTodos] = useState(todosArr);
 
   const addTodo = (todo) => {
     let id;
-    todos.length===0? id=0 : id=todos[todos.length-1].id + 1;
+    todos.length === 0 ? id = 0 : id = todos[todos.length - 1].id + 1;
     const newTodo = {
       id: id,
       title: todo
@@ -25,9 +25,7 @@ function App() {
   }
 
   const deleteTodo = (id) => {
-    setTodos(todos.filter((todo)=>{
-      return todo.id !== id;
-    }));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   useEffect(() => {
@@ -38,10 +36,10 @@ function App() {
     <>
       <div className="md:w-1/2 mx-auto mt-20 text-center">
         <h1 className="font-medium text-3xl">Basic React Todo App</h1>
-        <Inputbar addTodo={addTodo}/>
+        <Inputbar addTodo={addTodo} />
 
-        <Todolist todos={todos} deleteTodo={deleteTodo}/>
-        </div>
+        <Todolist todos={todos} deleteTodo={deleteTodo} />
+      </div>
     </>
   );
 }
