@@ -17,7 +17,7 @@ function App() {
     await axios.get(uri)
       .then(res => {
         setCoins(res.data);
-        console.log(res.data);
+        // console.log(res.data);
         setLoaded(true);
       })
   }
