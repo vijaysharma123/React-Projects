@@ -14,7 +14,7 @@ const AddContact = ({addContact}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         addContact(name, email);
-        enqueueSnackbar("Contact Added Succesfully", { variant: "success" });
+        enqueueSnackbar("Contact Added Successfully", { variant: "success" });
         navigate("/");
     }
 

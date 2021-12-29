@@ -24,22 +24,15 @@ function App() {
 
   const addContact = (name, email) => {
     const newContact = {id : uuid(), name, email};
-    console.log(newContact);
+    // console.log(newContact);
     setContactsArr([...contactsArr, newContact]);
-    console.log(contactsArr);
+    // console.log(contactsArr);
   }
 
   const deleteContact = (id) => {
     setContactsArr(contactsArr.filter((contact)=> contact.id !== id ));
-    enqueueSnackbar("Contact Deleted Succesfully", { variant: "error" })
+    enqueueSnackbar("Contact Deleted Successfully", { variant: "error" })
   }
-
-  // const searchContact = (search) => {
-  //   const filteredArr = contactsArr.filter((contact)=> (
-  //     contact.name.toLowerCase().includes(search.toLowerCase())
-  //   ));
-  //   setContactsArr(filteredArr);
-  // }
 
   useEffect(() => {
       localStorage.setItem('contacts', JSON.stringify(contactsArr));
@@ -67,7 +60,7 @@ const theme = createTheme({
 })
 
 const toggleTheme = () => {
-  darkMode ? setDarkMode(false) : setDarkMode(true);
+  setDarkMode(!darkMode);
 }
 
   return (

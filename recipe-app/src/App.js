@@ -19,9 +19,7 @@ function App() {
 
   const getRecipes = async (search, healthLabel) => {
     setIsLoaded(false);
-    const apikey = "a10cbb66360281524efc89d0a1055d01";
-    const appid = "beff2f47";
-    const uri = `https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${appid}&app_key=${apikey}&health=${healthLabel}`;
+    const uri = `https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}&health=${healthLabel}`;
     try {
       await axios.get(uri).then((res) => {
         // console.log(res.data)
@@ -31,9 +29,7 @@ function App() {
           ...new Set(res.data.hits.map((elem) => elem.recipe.mealType[0])),
           "All",
         ]);
-        // setTimeout(() => {
         setIsLoaded(true);
-        // }, 1000);
       });
     } catch (error) {
       console.log(error);
