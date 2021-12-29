@@ -1,4 +1,3 @@
-import "./App.css";
 import Header from "./components/Header";
 import Searchbar from "./components/Searchbar";
 import RecipeContainer from "./components/RecipeContainer";
@@ -19,7 +18,7 @@ function App() {
 
   const getRecipes = async (search, healthLabel) => {
     setIsLoaded(false);
-    const uri = `https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_API_KEY}&health=${healthLabel}`;
+    const uri = `https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=beff2f47&app_key=${process.env.REACT_APP_API_KEY}&health=${healthLabel}`;
     try {
       await axios.get(uri).then((res) => {
         // console.log(res.data)
@@ -71,11 +70,11 @@ function App() {
   })
 
   useEffect(() => {
-    getRecipes("pasta","vegan");
+    getRecipes("pasta", "vegan");
   }, [])
-  
+
   const toggleTheme = () => {
-    darkMode ? setDarkMode(false) : setDarkMode(true);
+    setDarkMode(!darkMode);
   }
 
   return (
@@ -84,6 +83,7 @@ function App() {
       <Searchbar getRecipes={getRecipes} />
 
       {!mealTypes && undefined}
+
       {mealTypes && (
         <Menu
           mealTypes={mealTypes}
@@ -94,11 +94,12 @@ function App() {
 
       {!recipes && (
         <Container maxWidth="sm">
-        <Typography variant="h4" mt={8} align="center">
-          Fetching some pasta recipes for you!😋
-        </Typography>
+          <Typography variant="h4" mt={8} align="center">
+            Fetching some pasta recipes for you! 😋
+          </Typography>
         </Container>
       )}
+
       {recipes && (
         <RecipeContainer
           recipeList={recipeList.length === 0 ? recipes : recipeList}
@@ -106,8 +107,7 @@ function App() {
         />
       )}
 
-      {/* <Footer/> */}
-      </ThemeProvider>
+    </ThemeProvider>
   );
 }
 

@@ -28,7 +28,7 @@ const RecipeContainer = ({ recipeList, isLoaded }) => {
   // }
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ marginBottom: 6 }}>
       {/* {
             mealTypes.sort().map((mealType)=>(
               <Button variant="outlined" onClick={()=>{filterRecipes(mealType)}}>{mealType}</Button>

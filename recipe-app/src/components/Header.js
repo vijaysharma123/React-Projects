@@ -16,7 +16,7 @@ const Header = ({ toggleTheme }) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <LocalDiningIcon/>
+          <LocalDiningIcon />
           <Typography variant="h6" component="div" ml={0.5} sx={{ flexGrow: 1 }}>
             Recipes App
           </Typography>

@@ -13,7 +13,7 @@ import {
 import IngredientsDialog from "./IngredientsDialog";
 
 const RecipeItem = ({ recipe, isLoaded }) => {
-  
+
   const { image, label, cuisineType, url } = recipe.recipe;
 
   const [open, setOpen] = useState(false);
@@ -80,11 +80,9 @@ const RecipeItem = ({ recipe, isLoaded }) => {
               {!isLoaded ? (
                 <Skeleton animation="wave" sx={{ height: 40 }} />
               ) : (
-                <a href={url} target="_blank" rel="noreferrer noopener">
-                  <Button fullWidth variant="outlined">
-                    Full Recipe
-                  </Button>
-                </a>
+                <Button href={url} target="_blank" fullWidth variant="outlined">
+                  Full Recipe
+                </Button>
               )}
             </Stack>
           </CardContent>
