@@ -1,23 +1,22 @@
-import './App.css';
-import { Container, Paper, Typography, Grid, Card, CardContent, CardMedia, CircularProgress, Skeleton, Button } from '@mui/material';
+import { Typography, Grid, Card, CardContent, CardMedia, CircularProgress, Button } from '@mui/material';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function App() {
-  
+
   const [users, setUsers] = useState(null);
 
   const getUsers = async () => {
     const url = "https://api.github.com/users";
     await axios.get(url)
-    .then((res) => (
-      // console.log(res.data)
-      setUsers(res.data)
-    ))
+      .then((res) => (
+        // console.log(res.data)
+        setUsers(res.data)
+      ))
   }
 
   useEffect(() => {
-      getUsers();
+    getUsers();
   }, [])
 
   return (
@@ -26,40 +25,40 @@ function App() {
         GitHub Users
       </Typography>
 
-        <Grid sx={{padding:6}} container justifyContent="center" spacing={4}>
-          {
-            users && (
+      <Grid sx={{ padding: 6 }} container justifyContent="center" spacing={4}>
+        {
+          users && (
             users.map((user) => {
-              const { avatar_url, login, html_url } = user;
+              const { id, avatar_url, login, html_url } = user;
               return (
-        <Grid item xs={12} sm={6} md={4} lg={3}>
-          <Card sx={{ maxWidth: "full" }}>
-        <CardMedia
-          component="img"
-          height="220"
-          image={avatar_url}
-          alt="profile avatar"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {login}
-          </Typography>
-          <a target="_blank" href={html_url} style={{ textDecoration: "none" }}><Button variant="contained" fullWidth>Follow</Button></a>
-        </CardContent>
-    </Card>
-        </Grid>
-            )})
-            )
-            
-          }
+                <Grid item xs={12} sm={6} md={4} lg={3} key={id}>
+                  <Card sx={{ maxWidth: "full" }}>
+                    <CardMedia
+                      component="img"
+                      height="220"
+                      image={avatar_url}
+                      alt="profile avatar"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        {login}
+                      </Typography>
+                      <Button href={html_url} target='_blank' variant="contained" fullWidth>Follow</Button>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              )
+            })
+          )
+        }
 
-          {
+        {
           !users && (
-              <CircularProgress />
-            )
-          }
+            <CircularProgress />
+          )
+        }
 
-        </Grid>
+      </Grid>
     </>
   );
 }
