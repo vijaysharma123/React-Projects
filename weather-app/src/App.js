@@ -1,8 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import './App.css';
-import Leftsidebar from './components/Leftsidebar';
-import Rightsidebar from './components/Rightsidebar';
+import Leftsidebar from './Components/Leftsidebar';
+import Rightsidebar from './Components/Rightsidebar';
 
 function App() {
 
@@ -31,7 +31,6 @@ function App() {
 
     } catch (error) {
       console.log(error);
-      // alert("No Results Found!");a
     }
 
   }
