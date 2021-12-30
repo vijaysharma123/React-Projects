@@ -31,6 +31,7 @@ function App() {
 
     } catch (error) {
       console.log(error);
+      alert("No Results Found!");
     }
 
   }
