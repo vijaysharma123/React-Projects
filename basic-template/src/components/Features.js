@@ -1,4 +1,5 @@
 import React from 'react'
+import site from '../images/site.png'
 
 const Features = () => {
     return (
@@ -16,7 +17,7 @@ const Features = () => {
                         <button className="btn btn-primary">Learn More</button>
                     </div>
                     <div className="col-lg-5">
-                        <img className="img-fluid" src="http://invoza.react.themesdesign.in/static/media/img-1.f887077e.png" alt="" />
+                        <img className="img-fluid" src={site} alt="" />
                     </div>
                 </div>
             </div>
@@ -24,7 +25,7 @@ const Features = () => {
             <div className="bg-light container my-4">
                 <div className="row py-4">
                     <div className="col-lg-5">
-                        <img className="img-fluid" src="http://invoza.react.themesdesign.in/static/media/img-1.f887077e.png" alt="" />
+                        <img className="img-fluid" src={site} alt="" />
                     </div>
                     <div className="col-lg-6 p-4">
                         <h4>Improve your Marketing business</h4>
@@ -42,7 +43,7 @@ const Features = () => {
                         <button className="btn btn-primary">Learn More</button>
                     </div>
                     <div className="col-lg-5">
-                        <img className="img-fluid" src="http://invoza.react.themesdesign.in/static/media/img-1.f887077e.png" alt="" />
+                        <img className="img-fluid" src={site} alt="" />
                     </div>
                 </div>
             </div>
