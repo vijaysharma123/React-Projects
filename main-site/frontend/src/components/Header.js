@@ -6,9 +6,10 @@ import {
     Stack,
     Flex,
     Box,
-    Container
+    Container,
+    Link
 } from '@chakra-ui/react';
-import Hero from '../react.png';
+import Hero from '../images/react.png';
 
 function Header() {
 
@@ -30,31 +31,33 @@ function Header() {
                     </Heading>
 
                     <Text color={'gray.500'}>
-                        Snippy is a rich coding snippets app that lets you create your own
-                        code snippets, categorize them, and even sync them in the cloud so
-                        you can use them anywhere. All that is free!
+                        React makes it painless to create interactive UIs. Design simple views for each state in your application, and React will efficiently update and render just the right components when your data changes.
                     </Text>
                     <Stack
                         spacing={{ base: 4, sm: 6 }}
                         direction={{ base: 'column', sm: 'row' }}
                     >
                         <Button
+                            as={Link}
+                            href={'https://reactjs.org/docs/getting-started.html'}
+                            isExternal
+                            style={{ textDecoration: 'none' }}
                             rounded={'full'}
                             size={'lg'}
-                            fontWeight={'normal'}
                             px={6}
                             colorScheme={'cyan'}
+                            fontWeight={500}
                             bg={'cyan.400'}
                             _hover={{ bg: 'cyan.500' }}>
-                            Get started
+                            Get Started
                         </Button>
-                        <Button
+                        {/* <Button
                             rounded={'full'}
                             size={'lg'}
                             fontWeight={'normal'}
                             px={6}>
                             How It Works
-                        </Button>
+                        </Button> */}
                     </Stack>
 
                 </Stack>
@@ -76,9 +79,6 @@ function Header() {
                         />
                     </Box>
                 </Flex>
-
-
-
             </Stack>
 
         </Container>

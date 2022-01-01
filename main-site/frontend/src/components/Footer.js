@@ -5,8 +5,8 @@ import {
     Box,
     Container,
     IconButton,
+    useColorModeValue
 } from '@chakra-ui/react';
-import { useColorModeValue } from '@chakra-ui/react';
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
@@ -27,19 +27,18 @@ const Footer = () => {
 
                     <HStack>
                         <Text>© 2021 React Projects. Designed By</Text>
-                        <Text as={'a'} href='' color={'blue.500'} fontWeight={500}>Jigar Sable</Text>
+                        <Text as={'a'} href={'https://www.linkedin.com/in/jigar-sable/'} target={'_blank'} color={'blue.500'} fontWeight={500}>Jigar Sable</Text>
                     </HStack>
 
 
                     <Stack direction={'row'} spacing={6}>
-
-                        <IconButton isRound='true' as={'a'} href={''}>
+                        <IconButton isRound='true' as={'a'} href={'https://github.com/jigar-sable'} target='_blank'>
                             <FaGithub />
                         </IconButton>
-                        <IconButton isRound='true' as={'a'} href={''}>
+                        <IconButton isRound='true' as={'a'} href={'https://www.linkedin.com/in/jigar-sable/'} target='_blank'>
                             <FaLinkedin />
                         </IconButton>
-                        <IconButton isRound='true' as={'a'} href={''}>
+                        <IconButton isRound='true' as={'a'} href={'https://www.instagram.com/jigarsable_/'} target='_blank'>
                             <FaInstagram />
                         </IconButton>
 
