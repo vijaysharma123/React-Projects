@@ -12,7 +12,7 @@ const Features = () => {
                 <div className="row py-4">
                     <div className="col-lg-6 p-4">
                         <h4>Improve your Marketing business</h4>
-                        <p>If several languages coalesce, the grammar of the resulting language is more simple and regular.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex possimus totam nemo recusandae corporis tempora.</p>
                         <button className="btn btn-primary">Learn More</button>
                     </div>
                     <div className="col-lg-5">
@@ -28,7 +28,7 @@ const Features = () => {
                     </div>
                     <div className="col-lg-6 p-4">
                         <h4>Improve your Marketing business</h4>
-                        <p>If several languages coalesce, the grammar of the resulting language is more simple and regular.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex possimus totam nemo recusandae corporis tempora.</p>
                         <button className="btn btn-primary">Learn More</button>
                     </div>
                 </div>
@@ -38,7 +38,7 @@ const Features = () => {
                 <div className="row py-4">
                     <div className="col-lg-6 p-4">
                         <h4>Improve your Marketing business</h4>
-                        <p>If several languages coalesce, the grammar of the resulting language is more simple and regular.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex possimus totam nemo recusandae corporis tempora.</p>
                         <button className="btn btn-primary">Learn More</button>
                     </div>
                     <div className="col-lg-5">
