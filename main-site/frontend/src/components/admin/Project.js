@@ -14,6 +14,7 @@ import {
 } from '@chakra-ui/react';
 import { Link as ReachLink } from "react-router-dom";
 import { ExternalLinkIcon } from '@chakra-ui/icons';
+import { MdEdit, MdDelete } from 'react-icons/md';
 
 const Project = ({ _id, name, view, code, preview, deleteProject, isOpen, setIsOpen, cancelRef }) => {
     return (
@@ -43,10 +44,17 @@ const Project = ({ _id, name, view, code, preview, deleteProject, isOpen, setIsO
                     </Link>
                 </Td>
                 <Td>
-                    <Button as={ReachLink} to={`/admin/edit/${_id}`} variant={'solid'} colorScheme={'cyan'} mr={4} size={'md'} >
+                    <Button 
+                    as={ReachLink} 
+                    to={`/admin/edit/${_id}`} 
+                    variant={'solid'} 
+                    colorScheme={'cyan'} 
+                    mr={4} 
+                    size={'md'}
+                    leftIcon={<MdEdit />} >
                         Edit
                     </Button>
-                    <Button variant={'solid'} colorScheme={'red'} size={'md'} onClick={() => setIsOpen(true)}>
+                    <Button variant={'solid'} colorScheme={'red'} size={'md'} leftIcon={<MdDelete />} onClick={() => setIsOpen(true)}>
                         Delete
                     </Button>
                 </Td>

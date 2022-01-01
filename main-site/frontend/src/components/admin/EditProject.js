@@ -31,7 +31,7 @@ const EditProject = () => {
     const getProjectDetails = async () => {
         await axios.get(`/api/project/${params.id}`)
             .then((res) => {
-                console.log(res.data)
+                // console.log(res.data)
                 const { name, view, code } = res.data.project;
                 setName(name);
                 setView(view);

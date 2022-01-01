@@ -20,7 +20,7 @@ import {
     HStack,
     Input,
 } from '@chakra-ui/react';
-
+import { MdNoteAdd } from 'react-icons/md';
 
 const Panel = () => {
 
@@ -48,7 +48,7 @@ const Panel = () => {
         await axios.get('/api/projects')
             .then((res) => {
                 setProjects(res.data.projects);
-                console.log(res.data.projects)
+                // console.log(res.data.projects)
             })
     }
 
@@ -57,7 +57,7 @@ const Panel = () => {
 
         await axios.delete(`/api/project/${id}`, { data: { token } })
             .then((res) => {
-                console.log(res)
+                // console.log(res)
                 if (res.data.deleted) {
                     setProjects(projects.filter((project) => project._id !== id));
                     toast({
@@ -92,7 +92,7 @@ const Panel = () => {
                             onChange={(e) => setSearch(e.target.value)}
                         >
                         </Input>
-                        <Button as={ReachLink} to="/admin/add" colorScheme={'blue'}>Add Project</Button>
+                        <Button as={ReachLink} to="/admin/add" leftIcon={<MdNoteAdd />} colorScheme={'blue'}>Add Project</Button>
                     </HStack>
 
                     <Box
