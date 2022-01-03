@@ -29,8 +29,6 @@ const Panel = () => {
 
     const [projects, setProjects] = useState([]);
     const [search, setSearch] = useState("");
-    const [isOpen, setIsOpen] = useState(false);
-    const cancelRef = useRef();
 
     const auth = async () => {
         const token = localStorage.getItem('jwtoken');
@@ -65,7 +63,6 @@ const Panel = () => {
                         status: 'success',
                         duration: 3000,
                     });
-                    setIsOpen(false);
                 }
             })
     }
@@ -126,22 +123,16 @@ const Panel = () => {
                                                 <Project
                                                     {...project}
                                                     deleteProject={deleteProject}
-                                                    isOpen={isOpen}
-                                                    setIsOpen={setIsOpen}
-                                                    cancelRef={cancelRef}
                                                     key={project._id}
                                                 />
                                             )
-                                        })
+                                        }).reverse()
                                 }
 
                             </Tbody>
                         </Table>
-
                     </Box>
-
                 </VStack>
-
             </Container>
         </>
     )

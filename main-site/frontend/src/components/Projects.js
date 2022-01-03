@@ -63,7 +63,7 @@ const Projects = () => {
                     {
                         projects.map((project) => (
                             <Project {...project} key={project._id} />
-                        ))
+                        )).reverse()
                     }
 
 

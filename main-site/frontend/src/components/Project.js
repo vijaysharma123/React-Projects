@@ -27,19 +27,20 @@ const Project = ({ name, view, code, preview }) => {
             }}>
 
             <Image
-                h={'14rem'}
+                h={'15rem'}
                 w={'full'}
                 src={preview}
                 objectFit={'cover'}
             />
             <Heading
-                fontSize={'lg'}
+                fontSize={'xl'}
                 fontWeight={600}
-                p={4}
+                px={4}
+                pt={3}
                 color={isDark ? 'white' : 'gray.900'}
-                backgroundColor={isDark ? 'blackAlpha.600' : 'whiteAlpha.600'}
+                // backgroundColor={isDark ? 'blackAlpha.600' : 'whiteAlpha.600'}
                 w={'full'}
-                position={'absolute'}
+                // position={'absolute'}
                 top={0}>
                 {name}
             </Heading>

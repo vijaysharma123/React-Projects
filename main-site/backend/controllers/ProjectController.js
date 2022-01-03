@@ -68,7 +68,7 @@ const deleteProject = async (req, res) => {
         if (project.user.toString() !== req.id) {
             return res.json({ message: 'Permission Denied' })
         } else {
-            await project.remove();
+            await Project.findByIdAndDelete(req.params.id);
             res.status(200).json({
                 status: "success",
                 deleted: true

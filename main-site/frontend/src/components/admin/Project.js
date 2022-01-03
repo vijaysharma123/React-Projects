@@ -15,11 +15,22 @@ import {
 import { Link as ReachLink } from "react-router-dom";
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { MdEdit, MdDelete } from 'react-icons/md';
+import { useState, useRef } from 'react';
 
-const Project = ({ _id, name, view, code, preview, deleteProject, isOpen, setIsOpen, cancelRef }) => {
+const Project = ({ _id, name, view, code, preview, deleteProject }) => {
+
+    const [isOpen, setIsOpen] = useState(false);
+    const cancelRef = useRef();
+
+    const deleteProjectById = (id) => {
+        // console.log(id)
+        deleteProject(id);
+        setIsOpen(false);
+    }
+
     return (
         <>
-            <Tr key={_id}>
+            <Tr>
                 <Td>
                     <Image
                         h={20}
@@ -68,7 +79,7 @@ const Project = ({ _id, name, view, code, preview, deleteProject, isOpen, setIsO
                 <AlertDialogOverlay>
                     <AlertDialogContent>
                         <AlertDialogHeader fontSize='lg' fontWeight='bold'>
-                            Delete Project
+                            Delete {name}
                         </AlertDialogHeader>
 
                         <AlertDialogBody>
@@ -79,7 +90,7 @@ const Project = ({ _id, name, view, code, preview, deleteProject, isOpen, setIsO
                             <Button ref={cancelRef} onClick={() => setIsOpen(false)}>
                                 Cancel
                             </Button>
-                            <Button colorScheme='red' onClick={() => deleteProject(_id)} ml={3}>
+                            <Button colorScheme='red' onClick={() => deleteProjectById(_id)} ml={3}>
                                 Delete
                             </Button>
                         </AlertDialogFooter>
