@@ -9,7 +9,7 @@ export default function Home({ movies }) {
   return (
     <div>
       <Head>
-        <title>Hulu Clone | NextJS Project</title>
+        <title>Hulu App | NextJS Project</title>
         <meta name="description" content="Hulu Nextjs TailwindCSS Project" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -25,7 +25,7 @@ export default function Home({ movies }) {
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
 
-  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.fetchTrending.url}`)
+  const request = await fetch(`https://api.themoviedb.org/3${requests[genre]?.url || requests.Trending.url}`)
     .then((res) => res.json())
 
   return {

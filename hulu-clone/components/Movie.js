@@ -25,7 +25,7 @@ const Movie = forwardRef(({ movie }, ref) => {
                     {movie.title || movie.original_name}
                 </h2>
 
-                <p className='flex items-center opacity-0 group-hover:opacity-100 transition-opacity duration-75 ease-in'>
+                <p className='flex items-center capitalize opacity-0 group-hover:opacity-100 transition-opacity duration-75 ease-in'>
                     {movie.media_type && `${movie.media_type} •`} {" "}
                     {movie.release_date || movie.first_air_date} • {" "}
                     <ThumbUpIcon className='h-5 mx-2' /> {movie.vote_count}
