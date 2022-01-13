@@ -7,10 +7,22 @@ const projectSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: User
     },
-    name: String,
-    view: String,
-    code: String,
-    preview: String
+    name: {
+        type: String,
+        required: true,
+    },
+    view: {
+        type: String,
+        required: true,
+    },
+    code: {
+        type: String,
+        required: true,
+    },
+    preview: {
+        type: String,
+        required: true,
+    },
 });
 
 // project model

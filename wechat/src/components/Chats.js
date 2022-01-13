@@ -63,7 +63,7 @@ const Chats = () => {
                 })
         })
 
-    }, []);
+    }, [navigate, user]);
 
     const logOut = () => {
         signOut(auth);
