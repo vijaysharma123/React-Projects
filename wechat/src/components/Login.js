@@ -39,9 +39,10 @@ const Login = () => {
                         maxW={'xl'}
                         variant={'outline'}
                         size={'lg'}
+                        colorScheme={'gray'}
                         leftIcon={<FcGoogle />}>
                         <Center>
-                            <Text>Sign in with Google</Text>
+                            <Text color={'white'}>Sign in with Google</Text>
                         </Center>
                     </Button>
                     <Box>
