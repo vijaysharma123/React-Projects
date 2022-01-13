@@ -39,7 +39,8 @@ const Login = () => {
                         maxW={'xl'}
                         variant={'outline'}
                         size={'lg'}
-                        colorScheme={'gray'}
+                        color={'gray'}
+                        _hover={{ bg: 'gray.600' }}
                         leftIcon={<FcGoogle />}>
                         <Center>
                             <Text color={'white'}>Sign in with Google</Text>
