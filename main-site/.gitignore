@@ -5,8 +5,10 @@
 # production
 /frontend/build
 
-# misc
+# local env files
 .env
+
+# misc
 /frontend/.DS_Store
 /frontend/.env.local
 /frontend/.env.development.local
